@@ -5,19 +5,19 @@
 
         <div class="col-sm-5 form-group">
           <label>Nome</label>
-          <input class="form-control">
+          <input class="form-control" #nameInput>
         </div>
 
         <div class="col-sm-2 form-group">
           <label>Quantidade</label>
-          <input class="form-control">
+          <input class="form-control" #amountInput>
         </div>
 
       </div>
 
       <div class="row">
         <div class="col-xs-12">
-          <button type="submit" class="btn btn-success">Adiconar</button>
+          <button type="button" class="btn btn-success" (click)="onAddItem()">Adiconar</button>
           <button type="button" class="btn btn-danger">Apagar</button>
           <button type="button" class="btn btn-primary">Limpar</button>
         </div>

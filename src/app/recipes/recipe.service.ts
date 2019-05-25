@@ -11,7 +11,7 @@ export class RecipeService {
     new Recipe(
       'X-Burger',
       'Delicioso X-Burger caseiro',
-      'https://ichef.bbci.co.uk/news/660/cpsprodpb/09C2/production/_95189420_plate-1968011_1920.jpg',
+      'http://painel.perdigao.com.br/panel/sites/default/files/styles/is_product_cover_mob_750_823/public/recipes-images/duplo-x-burger.png?itok=RnHhGv5Y',
       [
         new Ingredient('Pão', 1),
         new Ingredient('Hamburger', 2),

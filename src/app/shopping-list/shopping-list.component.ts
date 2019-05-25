@@ -6,19 +6,20 @@ import { ShoppingListService } from './shopping-list.service';
 @Component({
   selector: 'app-shopping-list',
   templateUrl: './shopping-list.component.html',
-  styleUrls: ['./shopping-list.component.css'],
-  providers: [ShoppingListService]
+  styleUrls: ['./shopping-list.component.css']
 })
 export class ShoppingListComponent implements OnInit {
-  ingredients: Ingredient[] = [
-    new Ingredient('Massa', 5),
-    new Ingredient('Molho', 10)
-  ];
-  constructor() { }
+  ingredients: Ingredient[];
+
+  constructor(private slService: ShoppingListService) { }
 
   ngOnInit() {
-  }
-  onIngredientAdded(ingredient: Ingredient) {
-    this.ingredients.push(ingredient);
+    this.ingredients = this.slService.getIngredients();
+    this.slService.ingredientsChanged
+      .subscribe(
+        (ingredients: Ingredient[]) => {
+          this.ingredients = ingredients;
+        }
+      );
   }
 }

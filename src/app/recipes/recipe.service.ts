@@ -11,19 +11,35 @@ export class RecipeService {
     new Recipe(
       'X-Burger',
       'Delicioso X-Burger caseiro',
-      'http://painel.perdigao.com.br/panel/sites/default/files/styles/is_product_cover_mob_750_823/public/recipes-images/duplo-x-burger.png?itok=RnHhGv5Y',
+      'https://www.guiabh.com.br/Repositorio/Upload/Destaque/320x320/sanduiche-em-bh-imagem.jpg',
       [
         new Ingredient('Pão', 1),
-        new Ingredient('Hamburger', 2),
-        new Ingredient('Queijo', 3),
-        new Ingredient('Maionese', 1)
+        new Ingredient('Queijo', 2),
+        new Ingredient('Hamburger', 1)
+      ]
+    ),
+
+    new Recipe(
+      'Schnitzel',
+      'Delicioso bife a milasa a moda austriaca',
+      'http://palavrasesabores.com.br/wp-content/uploads/2015/10/bife-milanesa-650x516.jpg',
+      [
+        new Ingredient('Bife', 1),
+        new Ingredient('Ovos', 2),
+        new Ingredient('Farinha de Trigo', 1)
       ]
     )
+
+
   ];
   constructor(private slService: ShoppingListService) {}
 
   getRecipes() {
     return this.recipes.slice();
+  }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
   }
 
   addIngredientsToShoppingList(ingredients: Ingredient[]) {
